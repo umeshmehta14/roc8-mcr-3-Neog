@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useData } from "../../Contexts/DataContext";
 
@@ -30,6 +30,8 @@ const SingleVideo = () => {
     handleNote,
     dispatch,
   } = useData();
+
+  const [editNote, setEditNote] = useState({});
 
   const selectedVideo = video?.find(({ _id }) => _id === +videoId);
 
@@ -91,18 +93,29 @@ const SingleVideo = () => {
           <section className="notes-section">
             <h2>My Notes</h2>
             <div className="notes-box">
-              {selectedVideo?.note?.map(({ _id, note }) => (
-                <div key={_id} className="note-card">
-                  <div className="note-text">{note}</div>
-                  <div className="note-icon">
-                    <FiEdit2 title="Edit" />
-                    <AiFillDelete
-                      title="Delete"
-                      onClick={() => handleNote(_id, "", _id)}
-                    />
+              {selectedVideo?.note?.map((not) => {
+                const { _id, note } = not;
+                return (
+                  <div key={_id} className="note-card">
+                    <div className="note-text">{note}</div>
+                    <div className="note-icon">
+                      <FiEdit2
+                        title="Edit"
+                        onClick={() => {
+                          setEditNote(not);
+                          dispatch({ type: SET_NOTE_MODAL });
+                        }}
+                      />
+                      <AiFillDelete
+                        title="Delete"
+                        onClick={() =>
+                          handleNote(selectedVideo._id, "", not._id)
+                        }
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </section>
         </div>
@@ -130,7 +143,13 @@ const SingleVideo = () => {
         </section>
       </main>
       {addPlaylistModal && <AddPlaylistVideo videoId={_id} />}
-      {noteModal && <NoteModal videoId={_id} />}
+      {noteModal && (
+        <NoteModal
+          videoId={_id}
+          editNote={editNote}
+          edit={editNote?.note?.length > 0 && true}
+        />
+      )}
     </>
   );
 };

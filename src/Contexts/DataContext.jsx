@@ -61,14 +61,16 @@ export const DataProvider = ({ children }) => {
 
   const handleNote = (videoId, newNote, noteId) => {
     if (noteId) {
+      console.log(noteId);
       const updatedVideos = state.video?.map((vid) =>
         vid._id === videoId
           ? {
               ...vid,
-              note: vid?.note?.filter((note) => note._id !== noteId),
+              note: vid.note?.filter((note) => note._id !== noteId),
             }
           : vid
       );
+      console.log(updatedVideos);
       dispatch({ type: UPDATE_VIDEO, payload: updatedVideos });
     } else {
       const updatedVideos = state.video?.map((vid) =>
@@ -81,6 +83,22 @@ export const DataProvider = ({ children }) => {
       );
       dispatch({ type: UPDATE_VIDEO, payload: updatedVideos });
     }
+  };
+
+  const handleEditNote = (videoId, newNote) => {
+    const updatedVideos = state.video?.map((vid) =>
+      vid._id === videoId
+        ? {
+            ...vid,
+            note: vid.note?.map((note) =>
+              note._id === newNote._id
+                ? { ...note.note, note: newNote.note }
+                : note
+            ),
+          }
+        : vid
+    );
+    dispatch({ type: UPDATE_VIDEO, payload: updatedVideos });
   };
 
   useEffect(() => {
@@ -96,6 +114,7 @@ export const DataProvider = ({ children }) => {
         handleWatchLater,
         handleAddPlaylistVideo,
         handlePlaylistVideoRemove,
+        handleEditNote,
         handleNote,
       }}
     >
