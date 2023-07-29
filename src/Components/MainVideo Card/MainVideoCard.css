@@ -1,0 +1,45 @@
+.main-video-card {
+    width: 246px;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    height: 237px;
+    cursor: pointer;
+    position: relative;
+}
+
+.main-video-card:hover {
+    box-shadow: 0px 0px 15px gray;
+}
+
+.main-video-card svg {
+    position: absolute;
+    font-size: 1.8rem;
+    background-color: white;
+    right: 0;
+    border-radius: 0 0 0 12px;
+    padding: 0.3rem;
+    color: var(--primary-color);
+}
+
+.vdo-detail-img {
+    width: 246px;
+    height: 138px;
+}
+
+.vdo-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.vdo-detail {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.vdo-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}

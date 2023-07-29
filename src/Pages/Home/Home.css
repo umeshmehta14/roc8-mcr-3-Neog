@@ -1,0 +1,29 @@
+.home-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.video-listing {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.category-card img {
+    width: 246px;
+    height: 138px;
+}
+
+.category-card:hover {
+    box-shadow: 0px 0px 15px gray;
+}

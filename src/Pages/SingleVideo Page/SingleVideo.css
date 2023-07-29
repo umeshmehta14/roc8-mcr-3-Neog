@@ -1,0 +1,85 @@
+.single-video-main-box {
+    display: flex;
+    gap: 1rem;
+}
+
+.vdo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.vdo-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid black;
+    padding-bottom: 1rem;
+}
+
+.vdo-channel-name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-section {
+    font-size: 1.6rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.icon-section svg {
+    cursor: pointer;
+}
+
+.more-vdos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.more-vdo-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.more-card {
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.more-card img {
+    width: 250px;
+    height: 145px;
+}
+
+.more-vdo-detail {
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.note-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+.note-icon {
+    font-size: 1.5rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.note-icon svg {
+    cursor: pointer;
+}

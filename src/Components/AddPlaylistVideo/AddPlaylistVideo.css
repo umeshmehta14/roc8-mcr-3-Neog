@@ -1,0 +1,21 @@
+.playlist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.playlist-name {
+    border-bottom: 1px solid;
+    padding-bottom: 0.3rem;
+}
+
+.playlist-name h3 {
+    cursor: pointer;
+    padding: 0.2rem 0;
+}
+
+.playlist-name:hover {
+    background-color: rgb(193, 255, 234);
+}

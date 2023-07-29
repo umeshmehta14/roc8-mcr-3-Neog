@@ -1,0 +1,30 @@
+.playlist-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.playlist-remove {
+    position: absolute;
+    font-size: 1.8rem;
+    top: 0;
+    right: 0;
+    background-color: white;
+    border-radius: 0 0 0 12px;
+    padding: 0.2rem;
+}
+
+.playlist-remove:hover {
+    background-color: rgb(255, 64, 64);
+    color: white;
+}
+
+.playlist-container>svg {
+    font-size: 2rem;
+    cursor: pointer;
+    margin: auto;
+}
+
+.album-card {
+    position: relative;
+    cursor: pointer;
+}
